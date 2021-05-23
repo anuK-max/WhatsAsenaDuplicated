@@ -13,13 +13,13 @@ const {MessageType} = require('@adiwajshing/baileys');
 const Language = require('../language');
 const Lang = Language.getString('_asena');
 
-if (Config.WORKTYPE == 'private') {
+if (Config.WORKTYPE == 'public') {
 
     Asena.addCommand({pattern: 'asena ?(.*)', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
 
         var CMD_HELP = '';
         if (match[1] === '') {
-            Asena.commands.map(
+            list.commands.map(
                 async (command) =>  {
                     if (command.dontAddCommandList || command.pattern === undefined) return;
                     try {
@@ -28,7 +28,7 @@ if (Config.WORKTYPE == 'private') {
                         var match = [command.pattern];
                     }
     
-                    var HANDLER = '';
+                    var HANDLER = .
     
                     if (/\[(\W*)\]/.test(Config.HANDLERS)) {
                         HANDLER = Config.HANDLERS.match(/\[(\W*)\]/)[1][0];
@@ -49,7 +49,7 @@ if (Config.WORKTYPE == 'private') {
         } else {
 
             var CMD_HELP = '';
-            Asena.commands.map(
+            list.commands.map(
                 async (command) =>  {
                     if (command.dontAddCommandList || command.pattern === undefined) return;
                     try {
